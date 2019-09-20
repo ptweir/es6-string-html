@@ -5,14 +5,36 @@
   "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
   "patterns": [
     {
-      "begin": "( *--sql| *--beginsql| *--begin-sql)",
-      "end": "( *;| *--endsql| *--end-sql)",
+      "begin": "(--sql)",
+      "end": "(;)",
       "captures": {
         "1": {
           "name": "variable.parameter"
         }
       },
       "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(--beginsql|--begin-sql)",
+      "end": "(--endsql|--end-sql)",
+      "captures": {
+        "1": {
+          "name": "variable.parameter"
+        }
+      },
+      "patterns": [
+        {
+          "match": "(;)",
+          "captures": {
+            "1": {
+              "name": "keyword.operator"
+            }
+          }
+        },
         {
           "include": "source.sql"
         }
