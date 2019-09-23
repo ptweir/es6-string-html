@@ -36,6 +36,16 @@
                 "embeddedLanguages": {
                     "meta.embedded.block.html": "html"
                 }
+            },
+            {
+                "path": "./syntaxes/highlight-sql-shell-string.json",
+                "scopeName": "shell-sql.injection",
+                "injectTo": [
+                    "source.shell"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.sql": "sql"
+                }
             }
         ],
         "snippets": [
