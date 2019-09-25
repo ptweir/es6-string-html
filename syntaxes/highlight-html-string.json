@@ -1,48 +1,17 @@
 {
-  "fileTypes": [
-    "py"
-  ],
-  "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
-  "repository": {
-    "keep-variables": {
-      "patterns": [
-        {
-          "begin": "\\{",
-          "end": "\\}",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.section.embedded.begin.py"
-            },
-            "2": {
-              "name": "punctuation.section.embedded"
-            }
-          },
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.section.embedded.end.py"
-            },
-            "2": {
-              "name": "punctuation.section.embedded"
-            }
-          },
-          "patterns": [
-            {
-              "include": "text.html.derivative"
-            }
-          ]
-        }
-      ]
-    }
-  },
+  "injectionSelector": "L:source",
   "patterns": [
     {
-      "begin": "( *--html| *--beginhtml| *--begin-html)",
-      "end": "( *--\\!html| *--endhtml| *--end-html)",
+      "begin": "(<!--(html).*-->)",
+      "end": "(<!--(\\!html).*-->)",
       "captures": {
-        "1": {
-          "name": "variable.parameter"
-        }
-      },
+            "1": {
+                "name": "comment.block.html"
+            },
+            "2": {
+                "name": "entity.name.function"
+            }
+        },
       "patterns": [
         {
           "include": "text.html.derivative"
@@ -53,5 +22,5 @@
       ]
     }
   ],
-  "scopeName": "python-html.injection"
+  "scopeName": "string-html.injection"
 }

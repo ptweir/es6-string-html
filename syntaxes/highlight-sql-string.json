@@ -1,45 +1,76 @@
 {
-  "fileTypes": [
-    "py"
-  ],
-  "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
-  "patterns": [
-    {
-      "begin": "(--sql)",
-      "end": "(;)",
-      "captures": {
-        "1": {
-          "name": "variable.parameter"
-        }
-      },
-      "patterns": [
+    "scopeName": "string-sql.injection",
+    "name": "source.stringcode",
+    "injectionSelector": "L:source - (source.stringcode, keyword.operator) ",
+    "patterns": [
         {
-          "include": "source.sql"
-        }
-      ]
-    },
-    {
-      "begin": "(--beginsql|--begin-sql)",
-      "end": "(--endsql|--end-sql)",
-      "captures": {
-        "1": {
-          "name": "variable.parameter"
-        }
-      },
-      "patterns": [
-        {
-          "match": "(;)",
-          "captures": {
-            "1": {
-              "name": "keyword.operator"
-            }
-          }
+            "begin": "(--(sql).*)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.line.double-dash.sql"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            },
+            "end": "(;)",
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.operator"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.sql"
+                }
+            ],
+            "contentName": "keyword.operator"
         },
         {
-          "include": "source.sql"
+            "begin": "(--(beginsql|begin-sql).*)",
+            "end": "(--(endsql|end-sql))",
+            "captures": {
+                "1": {
+                    "name": "comment.line.double-dash.sql"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "(;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.operator"
+                        }
+                    }
+                },
+                {
+                    "include": "source.sql"
+                }
+            ],
+            "contentName": "keyword.operator"
+        },
+        {
+            "begin": "(SELECT|INSERT|DELETE|UPDATE|DROP|ALTER|CREATE)",
+            "end": "(;)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.DML.sql"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.operator"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.sql"
+                }
+            ],
+            "contentName": "source.stringcode, keyword.operator"
         }
-      ]
-    }
-  ],
-  "scopeName": "python-sql.injection"
+    ]
 }
