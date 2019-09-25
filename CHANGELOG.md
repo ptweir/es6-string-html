@@ -1,17 +1,13 @@
-# Changelog
-All notable changes to this project will be documented in this file.
+# Change Log
 
-The format is based on [Keep a Changelog] (http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+All notable changes to the "highlight-string-code" extension will be documented in this file.
 
-### [1.1.0] - 2019-06-04
-- Added support for f-strings
+Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-### [1.0.0] - 2019-03-29
-- Added snippet and keybinding
-
-### [0.1.0] - 2019-03-28
-- Published on VS Code marketplace
-
-## [0.0.1] - 2018-03-28
-### Added
-- First working version
+## [Unreleased]
+- Keep variables highlighter between `{` and `}` in string code.
+- Add usages
+- Add HTML highlighter
+- Add SQL highlighter
+- Initial
+- Forked from [ptweir/python-string-sql](https://github.com/ptweir/python-string-sql)

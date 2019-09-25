@@ -1,7 +1,53 @@
 {
     "scopeName": "string-sql.injection",
     "name": "source.stringcode",
-    "injectionSelector": "L:source - (source.stringcode, keyword.operator) ",
+    "injectionSelector": "L:source - (source.stringcode, meta.embedded) ",
+    "repository": {
+        "keep-variable": {
+            "patterns": [
+                {
+                    "begin": "(\\{)",
+                    "end": "(\\})",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.begin"
+                        }
+                    },
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.end"
+                        }
+                    },
+                    "contentName": "variable"
+                }
+            ]
+        },
+        "keep-variables": {
+            "patterns": [
+                {
+                    "begin": "(`|'|\")",
+                    "end": "(`|'|\")",
+                    "captures": {
+                        "1": {
+                            "name": "string.quoted"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "string.quoted"
+                        },
+                        {
+                            "include": "#keep-variable"
+                        }
+                    ],
+                    "contentName": "string.quoted"
+                },
+                {
+                    "include": "#keep-variable"
+                }
+            ]
+        }
+    },
     "patterns": [
         {
             "begin": "(--(sql).*)",
@@ -16,15 +62,18 @@
             "end": "(;)",
             "endCaptures": {
                 "1": {
-                    "name": "keyword.operator"
+                    "name": "meta.embedded"
                 }
             },
             "patterns": [
                 {
+                    "include": "#keep-variables"
+                },
+                {
                     "include": "source.sql"
                 }
             ],
-            "contentName": "keyword.operator"
+            "contentName": "meta.embedded"
         },
         {
             "begin": "(--(beginsql|begin-sql).*)",
@@ -39,10 +88,13 @@
             },
             "patterns": [
                 {
+                    "include": "#keep-variables"
+                },
+                {
                     "match": "(;)",
                     "captures": {
                         "1": {
-                            "name": "keyword.operator"
+                            "name": "meta.embedded"
                         }
                     }
                 },
@@ -50,10 +102,10 @@
                     "include": "source.sql"
                 }
             ],
-            "contentName": "keyword.operator"
+            "contentName": "meta.embedded"
         },
         {
-            "begin": "(SELECT|INSERT|DELETE|UPDATE|DROP|ALTER|CREATE)",
+            "begin": "(SELECT|INSERT|DELETE|UPDATE|DROP|ALTER|CREATE|SET|TRUNCATE|GRANT|REVOKE)",
             "end": "(;)",
             "beginCaptures": {
                 "1": {
@@ -62,15 +114,18 @@
             },
             "endCaptures": {
                 "1": {
-                    "name": "keyword.operator"
+                    "name": "meta.embedded"
                 }
             },
             "patterns": [
                 {
+                    "include": "#keep-variables"
+                },
+                {
                     "include": "source.sql"
                 }
             ],
-            "contentName": "source.stringcode, keyword.operator"
+            "contentName": "source.stringcode, meta.embedded"
         }
     ]
 }

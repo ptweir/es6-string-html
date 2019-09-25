@@ -1,1 +1,7 @@
+out
 node_modules
+.vscode-test/
+*.vsix
+releases/
+.DS_Store
+.vscode/settings.json

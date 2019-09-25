@@ -1,26 +1,74 @@
 {
-  "injectionSelector": "L:source",
-  "patterns": [
-    {
-      "begin": "(<!--(html).*-->)",
-      "end": "(<!--(\\!html).*-->)",
-      "captures": {
-            "1": {
-                "name": "comment.block.html"
-            },
-            "2": {
-                "name": "entity.name.function"
-            }
+    "scopeName": "string-html.injection",
+    "name": "source.stringcode",
+    "injectionSelector": "L:source",
+    "repository": {
+        "keep-variable": {
+            "patterns": [
+                {
+                    "begin": "(\\{)",
+                    "end": "(\\})",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.begin"
+                        }
+                    },
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.end"
+                        }
+                    },
+                    "contentName": "variable"
+                }
+            ]
         },
-      "patterns": [
-        {
-          "include": "text.html.derivative"
-        },
-        {
-          "include": "#keep-variables"
+        "keep-variables": {
+            "patterns": [
+                {
+                    "begin": "(`|'|\")",
+                    "end": "(`|'|\")",
+                    "captures": {
+                        "1": {
+                            "name": "string.quoted"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "string.quoted"
+                        },
+                        {
+                            "include": "#keep-variable"
+                        }
+                    ],
+                    "contentName": "string.quoted"
+                },
+                {
+                    "include": "#keep-variable"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "scopeName": "string-html.injection"
+    },
+    "patterns": [
+        {
+            "begin": "(<!--(html).*-->)",
+            "end": "(<!--(\\!html).*-->)",
+            "captures": {
+                "1": {
+                    "name": "comment.block.html"
+                },
+                "2": {
+                    "name": "entity.name.function"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#keep-variables"
+                },
+                {
+                    "include": "text.html.derivative"
+                }
+            ],
+            "contentName": "meta.embedded"
+        }
+    ]
 }
