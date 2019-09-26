@@ -1,9 +1,13 @@
 {
     "name": "highlight-string-code",
     "displayName": "Highlight String Code",
-    "description": "Highlight SQL and HTML code in string",
-    "version": "0.3.0",
+    "description": "Highlight string as a specific language",
+    "version": "0.3.3",
     "publisher": "iuyoy",
+    "author": {
+        "name": "iuyoy"
+    },
+    "icon": "docs/icon.png",
     "bugs": {
         "url": "https://github.com/iuyoy/highlight-string-code/issues"
     },
@@ -12,7 +16,7 @@
         "url": "https://github.com/iuyoy/highlight-string-code"
     },
     "engines": {
-        "vscode": "^1.32.0"
+        "vscode": "^1.6.0"
     },
     "categories": [
         "Programming Languages",
@@ -21,13 +25,15 @@
     "contributes": {
         "languages": [
             {
-              "id": "*",
-              "extensions": [".*"]
+                "id": "any",
+                "extensions": [
+                    ".*"
+                ]
             }
-          ],
+        ],
         "grammars": [
             {
-                "language": "*",
+                "language": "any",
                 "path": "./syntaxes/highlight-html-string.json",
                 "scopeName": "string-html.injection",
                 "injectTo": [
@@ -38,7 +44,7 @@
                 }
             },
             {
-                "language": "*",
+                "language": "any",
                 "path": "./syntaxes/highlight-sql-string.json",
                 "scopeName": "string-sql.injection",
                 "injectTo": [
