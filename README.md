@@ -13,10 +13,10 @@ Syntax highlighting support for some specific language code in string.
   ![single SQL stirng with Sign](./docs/single_SQL_with_Sign.png)
   2. Insert sign pair `--beginsql` or `--begin-sql` and `--endsql` or `--end-sql` to highlight one and more SQL suquences.<br>
   ![multi SQL stirng with Sign](./docs/multi_SQL_with_Sign.png)
-  3. Any SQL sequence starts with **UPPERCASE** keyword (such as `SELECT`, `INSERT`, `UPDATE` and etc), and ends with `;` will be highlighted automatically.<br>
+  1. Any SQL sequence starts with **UPPERCASE** keyword (such as `SELECT`, `INSERT`, `UPDATE` and etc) and one of **WHITESPACE** character(such as `' ','\n','\t','\r','\f'`), and ends with `;` will be highlighted automatically.<br>
   ![SQL stirng no Sign](./docs/SQL_without_Sign.png)
 - HTML
-  - Insert sign pair `<!--html-->` and `<!--!html-->` to highlight one and more HTML suquences. Other comments can be added after `html` and `-->`.<br>
+  - Insert sign pair `<!--html-->` and `<!--!html-->` to highlight one and more HTML suquences. Other comments can be added between `html` and `-->`.<br>
   ![HTML with Sign](./docs/HTML_with_Sign.png)
 - Other
   - Highlight Variables in *highlighted* string code.<br>

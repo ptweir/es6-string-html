@@ -7,6 +7,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## TODO Notes
 - [x] Publish extension
 - [ ] Add switches for Highlight Signs
+- [ ] Add Chinese usage
+
+## [Realease]
+- Add a WHITESPACE in third SQL start matching rule.
 
 ## [Unreleased]
 - Ready to release

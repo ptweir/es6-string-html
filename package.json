@@ -2,7 +2,7 @@
     "name": "highlight-string-code",
     "displayName": "Highlight String Code",
     "description": "Highlight string as a specific language",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "publisher": "iuyoy",
     "author": {
         "name": "iuyoy"
@@ -21,6 +21,10 @@
     "categories": [
         "Programming Languages",
         "Snippets"
+    ],
+    "tags":[
+        "SQL",
+        "HTML"
     ],
     "contributes": {
         "languages": [

@@ -105,7 +105,7 @@
             "contentName": "meta.embedded"
         },
         {
-            "begin": "(SELECT|INSERT|DELETE|UPDATE|DROP|ALTER|CREATE|SET|TRUNCATE|GRANT|REVOKE)",
+            "begin": "(SELECT|INSERT|DELETE|UPDATE|DROP|ALTER|CREATE|SET|TRUNCATE|GRANT|REVOKE)\\s",
             "end": "(;)",
             "beginCaptures": {
                 "1": {
