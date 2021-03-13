@@ -5,17 +5,15 @@
   "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
   "patterns": [
     {
-      "begin": "( *--sql| *--beginsql| *--begin-sql)",
-      "end": "( *;| *--endsql| *--end-sql)",
-      "captures": {
-        "1": {
-          "name": "variable.parameter"
-        }
+      "name": "meta.embedded.sql",
+      "begin": "\\s*((?i)(select|with)|(--.*))",
+      "end": "(?=\"\"\")",
+      "beginCaptures": {
+        "2": { "name": "keyword.other.DML.sql" },
+        "3": { "name": "comment.line.double-dash.sql" }
       },
       "patterns": [
-        {
-          "include": "source.sql"
-        }
+        { "include": "source.sql" }
       ]
     }
   ],
