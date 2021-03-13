@@ -4,7 +4,6 @@ conn = psycopg2.connect("dbname=test user=postgres")
 cur = conn.cursor()
 
 query = """
---begin-sql
 SELECT last_name,
     start_day,
     COUNT(*) AS num_entries
