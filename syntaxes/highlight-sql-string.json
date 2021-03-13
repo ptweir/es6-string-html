@@ -6,7 +6,7 @@
   "patterns": [
     {
       "name": "meta.embedded.sql",
-      "begin": "\\s*((select|with)|(--.*))",
+      "begin": "\\s*((?i)(select|with)|(--.*))",
       "end": "(?=\"\"\")",
       "beginCaptures": {
         "2": { "name": "keyword.other.DML.sql" },
