@@ -9,5 +9,15 @@
             "\"\"\""
 	    ],
 	    "description": "SQL highlighted string"
+    },
+    "js_highlighted_string": {
+	    "prefix": "js",
+	    "body": [
+            "\"\"\"",
+            "//js",
+            ";//!js",
+            "\"\"\""
+	    ],
+	    "description": "javascript highlighted string"
     }
 }

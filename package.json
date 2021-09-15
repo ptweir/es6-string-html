@@ -36,6 +36,16 @@
                 "embeddedLanguages": {
                     "meta.embedded.block.html": "html"
                 }
+            },
+            {
+                "path": "./syntaxes/highlight-js-string.json",
+                "scopeName": "python-js.injection",
+                "injectTo": [
+                    "source.python"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.block.js": "javascript"
+                }
             }
         ],
         "snippets": [
