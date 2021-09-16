@@ -1,12 +1,12 @@
 {
-    "name": "python-string-sql",
-    "displayName": "python-string-sql",
-    "description": "highlight python strings as sql",
-    "version": "1.1.0",
-    "publisher": "ptweir",
+    "name": "python-string-syntax-highlight",
+    "displayName": "Javascript Syntax Highlighting in Python Strings",
+    "description": "highlight python strings as javascript, SQL, or HTML",
+    "version": "0.0.1",
+    "publisher": "stevenallenking",
     "icon": "docs/logo.png",
     "repository": {
-        "url": "https://github.com/ptweir/python-string-sql"
+        "url": "https://github.com/StevenAllenKing/python-string-syntax-highlight"
     },
     "engines": {
         "vscode": "^1.32.0"
@@ -45,6 +45,9 @@
                 ],
                 "embeddedLanguages": {
                     "meta.embedded.block.js": "javascript"
+                },
+                "tokenTypes": {
+                    "meta.embedded.block.js": "other"
                 }
             }
         ],

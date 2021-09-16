@@ -6,7 +6,7 @@
     "patterns": [
       {
         "begin": "//js",
-        "end": "//!js",
+        "end": ";//!js",
         "captures": {
           "1": {
             "name": "variable.parameter"

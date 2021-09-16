@@ -1,19 +1,20 @@
-import psycopg2
+# printschedule
+app.clientside_callback(
+    """
+    //js
+    function(downloaded_btn) {
+        
+        if (downloaded_btn !== undefined) {
+            if (downloaded_btn > 0) {
+                window.print();
+            }
+        }
+        
 
-conn = psycopg2.connect("dbname=test user=postgres")
-cur = conn.cursor()
 
-query = """
---begin-sql
-SELECT last_name,
-    start_day,
-    COUNT(*) AS num_entries
-FROM schema.table -- great name!
-WHERE start_day >= '2019-01-01'
-GROUP BY last_name, start_day
-ORDER BY num_entries DESC
-LIMIT 10;
-"""
-
-cur.execute(query)
-first_row = cur.fetchone()
+    }
+    ;//!js
+    """,
+    Output("window_print_output_placeholder", "data"),
+    Input('download-btn', 'n_clicks')
+)
