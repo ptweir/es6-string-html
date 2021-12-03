@@ -1,6 +1,9 @@
 {
   "fileTypes": [
-    "py"
+    "py",
+    "coc",
+    "coco",
+    "coconut"
   ],
   "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
   "patterns": [

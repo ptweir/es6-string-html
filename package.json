@@ -2,7 +2,7 @@
     "name": "python-string-sql",
     "displayName": "python-string-sql",
     "description": "highlight python strings as sql",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "publisher": "ptweir",
     "icon": "docs/logo.png",
     "repository": {
@@ -21,7 +21,8 @@
                 "path": "./syntaxes/highlight-sql-string.json",
                 "scopeName": "python-sql.injection",
                 "injectTo": [
-                    "source.python"
+                    "source.python",
+                    "source.coconut"
                 ],
                 "embeddedLanguages": {
                     "meta.embedded.sql": "sql"
@@ -31,7 +32,8 @@
                 "path": "./syntaxes/highlight-html-string.json",
                 "scopeName": "python-html.injection",
                 "injectTo": [
-                    "source.python"
+                    "source.python",
+                    "source.coconut"
                 ],
                 "embeddedLanguages": {
                     "meta.embedded.block.html": "html"
@@ -51,7 +53,7 @@
                 "mac": "ctrl+s",
                 "when": "editorTextFocus",
                 "args": {
-                    "langId": "python",
+                    "langId": ["python", "coconut"],
                     "name": "SQL_highlighted_string"
                 }
             }
