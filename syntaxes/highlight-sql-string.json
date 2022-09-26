@@ -5,8 +5,8 @@
   "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
   "patterns": [
     {
-      "begin": "( *--sql| *--beginsql| *--begin-sql)",
-      "end": "( *;| *--endsql| *--end-sql)",
+      "begin": "( *--sql| *--beginsql| *--begin-sql| *-- sql| *-- beginsql| *-- begin-sql)",
+      "end": "( *;| *--endsql| *--end-sql| * ;| *-- endsql| *-- end-sql)",
       "captures": {
         "1": {
           "name": "variable.parameter"
