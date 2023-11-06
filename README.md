@@ -41,6 +41,9 @@ SELECT
 
 ## Release Notes
 
+### [1.2.0] - 2023-11-06
+- Added support for mysql by allowing a space after --
+
 ### [1.1.0] - 2019-06-04
 - Added support for f-strings
 
