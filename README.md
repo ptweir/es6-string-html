@@ -13,7 +13,7 @@ Install `python-string-sql` from extensions (`ctrl + shift + x` or `cmd + shift 
 
 ## Usage
 
-Insert `--sql`, `--beginsql`, or `--begin-sql` at the beginning of the part of the string you would like highlighted and a semicolon, `--endsql`, or `--end-sql` at the end of the highlighted section.
+Insert `--sql`, `--beginsql`, or `--begin-sql` at the beginning of the part of the string you would like highlighted (with or without a space after --, e.g. `-- sql`) and a semicolon, `--endsql`, or `--end-sql` at the end of the highlighted section. 
 
 ### Snippets
 begin typing `sql` and the autocomplete snippet will appear:
